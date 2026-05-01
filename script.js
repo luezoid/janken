@@ -16,7 +16,15 @@ function getComputerChoice() {
 function getHumanChoice() {
   let text = prompt("You are fighting Gon Freecss. What's your move? Rock (Gu), Paper (Pa), or Scissors (Chi)?", "Rock")
 
-  return text;
+  if ((text.toLowerCase() === "rock") || (text.toLowerCase() === "gu") || (text.toLowerCase() === "r") || (text.toLowerCase() === "g")) {
+    return "r";
+  } else if ((text.toLowerCase() === "paper") || (text.toLowerCase() === "pa") || (text.toLowerCase() === "p")) {
+    return "p";
+  } else if ((text.toLowerCase() === "scissors") || (text.toLowerCase() === "chi") || (text.toLowerCase() === "s") || (text.toLowerCase() === "c")) {
+    return "s";
+  } else {
+    return "Invalid answer - please reload the page!"
+  }
 }
 
 function playGame() {
