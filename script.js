@@ -24,11 +24,14 @@ function playGame() {
       let user = humanChoice.toLowerCase();
 
       if ((user === "rock" && computerChoice === "Rock - Gu") || (user === "paper" && computerChoice === "Paper - Pa") || (user === "scissors" && computerChoice === "Scissors - Chi")) {
-        return "D" // "Draw! You both picked "  + user.charAt(0).toUpperCase() + user.slice(1) + " !"
+        console.log("Draw! You both picked "  + user.charAt(0).toUpperCase() + user.slice(1) + " !")
+        return "D"
       } else if ((user === "rock" && computerChoice === "Scissors - Chi") || (user === "paper" && computerChoice === "Rock - Gu") || (user === "scissors" && computerChoice === "Paper - Pa")) {
-        return "H" // "You win! " + user.charAt(0).toUpperCase() + user.slice(1) + " beats " + computerChoice + "!";
+        console.log("You win! " + user.charAt(0).toUpperCase() + user.slice(1) + " beats " + computerChoice + "!")
+        return "H"
       } else {
-        return "C" // "You lose! " + computerChoice + " beats " + user.charAt(0).toUpperCase() + user.slice(1) + "!";
+        console.log("You lose! " + computerChoice + " beats " + user.charAt(0).toUpperCase() + user.slice(1) + "!")
+        return "C"
       }
     }
 
@@ -37,13 +40,13 @@ function playGame() {
   const roundResult = playRound(humanSelection, computerSelection);
 
   if (roundResult === "D") {
-    console.log("Draw!")
+    // console.log("Draw!")
   } else if (roundResult === "H") {
     humanScore++;
-    console.log("You win!")
+    // console.log("You win!")
   } else {
     computerScore++;
-    console.log("You lose!")
+    // console.log("You lose!")
   }
 
 }
