@@ -22,7 +22,7 @@ function playRound(humanChoice, computerChoice) {
   let user = humanChoice.toLowerCase();
 
   if ((user === "rock" && computerChoice === "Rock - Gu") || (user === "paper" && computerChoice === "Paper - Pa") || (user === "scissors" && computerChoice === "Scissors - Chi")) {
-    return "Draw!" 
+    return "Draw! You both picked "  + user.charAt(0).toUpperCase() + user.slice(1) + " !"
   } else if ((user === "rock" && computerChoice === "Scissors - Chi") || (user === "paper" && computerChoice === "Rock - Gu") || (user === "scissors" && computerChoice === "Paper - Pa")) {
     return "You win! " + user.charAt(0).toUpperCase() + user.slice(1) + " beats " + computerChoice + "!";
   } else {
@@ -33,6 +33,4 @@ function playRound(humanChoice, computerChoice) {
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
-console.log(getComputerChoice())
-console.log(getHumanChoice())
 console.log(playRound(humanSelection, computerSelection))
