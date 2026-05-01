@@ -24,9 +24,9 @@ function playRound(humanChoice, computerChoice) {
   if ((user === "rock" && computerChoice === "Rock - Gu") || (user === "paper" && computerChoice === "Paper - Pa") || (user === "scissors" && computerChoice === "Scissors - Chi")) {
     return "Draw!" 
   } else if ((user === "rock" && computerChoice === "Scissors - Chi") || (user === "paper" && computerChoice === "Rock - Gu") || (user === "scissors" && computerChoice === "Paper - Pa")) {
-    return "You win!"
+    return "You win! " + user.charAt(0).toUppercase() + user.slice(1) + " beats " + computerChoice + "!";
   } else {
-    return "You lose!"
+    return "You lose!" + computerChoice + " beats " + user.charAt(0).toUppercase() + user.slice(1) + "!";
   }
     
 }
