@@ -51,10 +51,8 @@ function playGame() {
 
 }
 
-playGame();
-playGame();
-playGame();
-playGame();
-playGame();
+for (let i = 1; i <= 5; i++) {
+  playGame();
+}
 
 console.log("You got " + humanScore + " and the computer got " + computerScore + "!")
