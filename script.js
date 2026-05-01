@@ -7,14 +7,14 @@ function getComputerChoice() {
   if (randDec >= (1 / 3) && randDec < (2 / 3)) {
     return "r"
   } else if (randDec < (1 / 3)) {
-    return "s"
-  } else {
     return "p"
+  } else {
+    return "s"
   }
 }
 
 function getHumanChoice() {
-  let text = prompt("Rock (Gu), Paper (Pa), or Scissors (Chi)?", "Rock")
+  let text = prompt("You are fighting Gon Freecss. What's your move? Rock (Gu), Paper (Pa), or Scissors (Chi)?", "Rock")
 
   return text;
 }
