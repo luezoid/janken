@@ -41,33 +41,15 @@ function getFullName(input) {
 
 function playGame() {
     function playRound(humanChoice, computerChoice) {
-      let fullHuman;
-      let fullComputer;
-
-      if (humanChoice == "r") {
-        fullHuman = "Rock (Gu)"
-      } else if (humanChoice == "p") {
-        fullHuman = "Paper (Pa)"
-      } else {
-        fullHuman = "Scissors (Chi)"
-      }
-
-      if (computerChoice == "r") {
-        fullComputer = "Rock (Gu)"
-      } else if (humanChoice == "p") {
-        fullComputer = "Paper (Pa)"
-      } else {
-        fullComputer = "Scissors (Chi)"
-      }
 
       if ((humanChoice === "r" && computerChoice === "r") || (humanChoice === "p" && computerChoice === "p") || (humanChoice === "s" && computerChoice === "s")) {
-        console.log(`Draw! You both picked ${fullHuman}! No points!`)
+        console.log(`Draw! You both picked ${getFullName(humanChoice)}! No points!`)
         return "d"
       } else if ((humanChoice === "r" && computerChoice === "s") || (humanChoice === "p" && computerChoice === "r") || (humanChoice === "s" && computerChoice === "p")) {
-        console.log(`You win one point! ${fullHuman} beats ${fullComputer}!`)
+        console.log(`You win one point! ${getFullName(humanChoice)} beats ${getFullName(computerChoice)}!`)
         return "h"
       } else {
-        console.log(`Computer wins one point! ${fullComputer} beats ${fullHuman}!`)
+        console.log(`Computer wins one point! ${getFullName(computerChoice)} beats ${getFullName(humanChoice)}!`)
         return "c"
       }
     }
