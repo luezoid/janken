@@ -13,20 +13,20 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-  let prompt = prompt("Rock (Gu), Paper (Pa), or Scissors (Chi)?", "Rock")
+  let text = prompt("Rock (Gu), Paper (Pa), or Scissors (Chi)?", "Rock")
 
-  return prompt;
+  return text;
 }
 
 function playRound(humanChoice, computerChoice) {
-  let user = humanChoice.toLowercase();
+  let user = humanChoice.toLowerCase();
 
   if ((user === "rock" && computerChoice === "Rock - Gu") || (user === "paper" && computerChoice === "Paper - Pa") || (user === "scissors" && computerChoice === "Scissors - Chi")) {
     return "Draw!" 
   } else if ((user === "rock" && computerChoice === "Scissors - Chi") || (user === "paper" && computerChoice === "Rock - Gu") || (user === "scissors" && computerChoice === "Paper - Pa")) {
-    return "You win! " + user.charAt(0).toUppercase() + user.slice(1) + " beats " + computerChoice + "!";
+    return "You win! " + user.charAt(0).toUpperCase() + user.slice(1) + " beats " + computerChoice + "!";
   } else {
-    return "You lose!" + computerChoice + " beats " + user.charAt(0).toUppercase() + user.slice(1) + "!";
+    return "You lose! " + computerChoice + " beats " + user.charAt(0).toUpperCase() + user.slice(1) + "!";
   }
 }
 
@@ -35,3 +35,4 @@ const computerSelection = getComputerChoice();
 
 console.log(getComputerChoice())
 console.log(getHumanChoice())
+console.log(playRound(humanSelection, computerSelection))
