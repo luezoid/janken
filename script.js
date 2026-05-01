@@ -1,3 +1,5 @@
+let humanScore, computerScore = 0;
+
 function getComputerChoice() {
   let randDec = Math.random();
   
@@ -11,12 +13,14 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-  let humanChoice = prompt("Rock (Gu), Paper (Pa), or Scissors (Chi)?", "Rock")
+  let prompt = prompt("Rock (Gu), Paper (Pa), or Scissors (Chi)?", "Rock")
 
-  return humanChoice;
+  return prompt;
 }
 
-let humanScore, computerScore = 0;
+function playRound(humanChoice, computerChoice) {
+
+}
 
 console.log(getComputerChoice())
 console.log(getHumanChoice())
