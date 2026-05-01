@@ -29,17 +29,34 @@ function getHumanChoice() {
 
 function playGame() {
     function playRound(humanChoice, computerChoice) {
-      let user = humanChoice.toLowerCase();
+      let fullHuman;
+      let fullComputer;
 
-      if ((user === "rock" && computerChoice === "Rock - Gu") || (user === "paper" && computerChoice === "Paper - Pa") || (user === "scissors" && computerChoice === "Scissors - Chi")) {
-        console.log("Draw! You both picked "  + user.charAt(0).toUpperCase() + user.slice(1) + " !")
-        return "D"
-      } else if ((user === "rock" && computerChoice === "Scissors - Chi") || (user === "paper" && computerChoice === "Rock - Gu") || (user === "scissors" && computerChoice === "Paper - Pa")) {
-        console.log("You win! " + user.charAt(0).toUpperCase() + user.slice(1) + " beats " + computerChoice + "!")
-        return "H"
+      if (humanChoice == "r") {
+        fullHuman = "Rock (Gu)"
+      } else if (humanChoice == "p") {
+        fullHuman = "Paper (Pa)"
       } else {
-        console.log("You lose! " + computerChoice + " beats " + user.charAt(0).toUpperCase() + user.slice(1) + "!")
-        return "C"
+        fullHuman = "Scissors (Chi)"
+      }
+
+      if (computerChoice == "r") {
+        fullComputer = "Rock (Gu)"
+      } else if (humanChoice == "p") {
+        fullComputer = "Paper (Pa)"
+      } else {
+        fullComputer = "Scissors (Chi)"
+      }
+
+      if ((humanChoice === "r" && computerChoice === "r") || (humanChoice === "p" && computerChoice === "p") || (humanChoice === "s" && computerChoice === "s")) {
+        console.log(`Draw! You both picked ${fullHuman}! No points!`)
+        return "d"
+      } else if ((humanChoice === "r" && computerChoice === "s") || (humanChoice === "p" && computerChoice === "r") || (humanChoice === "s" && computerChoice === "p")) {
+        console.log(`You win one point! ${fullHuman} beats ${fullComputer}!`)
+        return "h"
+      } else {
+        console.log(`Computer wins one point! ${fullComputer} beats ${fullHuman}!`)
+        return "c"
       }
     }
 
@@ -47,16 +64,11 @@ function playGame() {
   const computerSelection = getComputerChoice();
   const roundResult = playRound(humanSelection, computerSelection);
 
-  if (roundResult === "D") {
-    // console.log("Draw!")
-  } else if (roundResult === "H") {
+  if (roundResult === "h") {
     humanScore++;
-    // console.log("You win!")
-  } else {
+  } else if (roundResult === "c") {
     computerScore++;
-    // console.log("You lose!")
   }
-
 }
 
 for (let i = 1; i <= 5; i++) {
