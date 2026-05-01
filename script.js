@@ -75,4 +75,15 @@ for (let i = 1; i <= 5; i++) {
   playGame();
 }
 
-console.log("You got " + humanScore + " and the computer got " + computerScore + "!")
+
+let finalScore;
+
+if (humanScore > computerScore) {
+  finalScore = "You've won the game!"
+} else if (computerScore > humanScore) {
+  finalScore = "You've lost the game!"
+} else {
+  finalScore = "You drew the game!"
+}
+
+console.log(`You got ${humanScore} point(s) and the computer got ${computerScore} point(s)! ${finalScore}`)
