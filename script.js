@@ -23,7 +23,7 @@ function getHumanChoice() {
   } else if ((text.toLowerCase() === "scissors") || (text.toLowerCase() === "chi") || (text.toLowerCase() === "s") || (text.toLowerCase() === "c")) {
     return "s";
   } else {
-    return "Invalid answer - please reload the page!"
+    return "Invalid input. Something's gone wrong here!"
   }
 }
 
