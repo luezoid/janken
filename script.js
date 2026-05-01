@@ -28,8 +28,10 @@ function playRound(humanChoice, computerChoice) {
   } else {
     return "You lose!" + computerChoice + " beats " + user.charAt(0).toUppercase() + user.slice(1) + "!";
   }
-    
 }
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
 
 console.log(getComputerChoice())
 console.log(getHumanChoice())
