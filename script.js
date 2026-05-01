@@ -27,6 +27,18 @@ function getHumanChoice() {
   }
 }
 
+function getFullName(input) {
+  if (input == "r") {
+    return "Rock (Gu)";
+  } else if (input == "p") {
+    return "Paper (Pa)";
+  } else if (input == "s") {
+    return "Scissors (Chi)";
+  } else {
+    console.log("Invalid input. Something's gone wrong here!")
+  }
+}
+
 function playGame() {
     function playRound(humanChoice, computerChoice) {
       let fullHuman;
