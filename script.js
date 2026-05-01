@@ -4,12 +4,12 @@ let computerScore = 0;
 function getComputerChoice() {
   let randDec = Math.random();
   
-  if (randDec >= (1 / 3) && randDec <= (2 / 3)) {
-    return "Rock - Gu"
+  if (randDec >= (1 / 3) && randDec < (2 / 3)) {
+    return "r"
   } else if (randDec < (1 / 3)) {
-    return "Scissors - Chi"
+    return "s"
   } else {
-    return "Paper - Pa"
+    return "p"
   }
 }
 
