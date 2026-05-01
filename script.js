@@ -1,4 +1,5 @@
-let humanScore, computerScore = 0;
+let humanScore = 0;
+let computerScore = 0;
 
 function getComputerChoice() {
   let randDec = Math.random();
@@ -18,19 +19,39 @@ function getHumanChoice() {
   return text;
 }
 
-function playRound(humanChoice, computerChoice) {
-  let user = humanChoice.toLowerCase();
+function playGame() {
+    function playRound(humanChoice, computerChoice) {
+      let user = humanChoice.toLowerCase();
 
-  if ((user === "rock" && computerChoice === "Rock - Gu") || (user === "paper" && computerChoice === "Paper - Pa") || (user === "scissors" && computerChoice === "Scissors - Chi")) {
-    return "Draw! You both picked "  + user.charAt(0).toUpperCase() + user.slice(1) + " !"
-  } else if ((user === "rock" && computerChoice === "Scissors - Chi") || (user === "paper" && computerChoice === "Rock - Gu") || (user === "scissors" && computerChoice === "Paper - Pa")) {
-    return "You win! " + user.charAt(0).toUpperCase() + user.slice(1) + " beats " + computerChoice + "!";
+      if ((user === "rock" && computerChoice === "Rock - Gu") || (user === "paper" && computerChoice === "Paper - Pa") || (user === "scissors" && computerChoice === "Scissors - Chi")) {
+        return "D" // "Draw! You both picked "  + user.charAt(0).toUpperCase() + user.slice(1) + " !"
+      } else if ((user === "rock" && computerChoice === "Scissors - Chi") || (user === "paper" && computerChoice === "Rock - Gu") || (user === "scissors" && computerChoice === "Paper - Pa")) {
+        return "H" // "You win! " + user.charAt(0).toUpperCase() + user.slice(1) + " beats " + computerChoice + "!";
+      } else {
+        return "C" // "You lose! " + computerChoice + " beats " + user.charAt(0).toUpperCase() + user.slice(1) + "!";
+      }
+    }
+
+  const humanSelection = getHumanChoice();
+  const computerSelection = getComputerChoice();
+  const roundResult = playRound(humanSelection, computerSelection);
+
+  if (roundResult === "D") {
+    console.log("Draw!")
+  } else if (roundResult === "H") {
+    humanScore++;
+    console.log("You win!")
   } else {
-    return "You lose! " + computerChoice + " beats " + user.charAt(0).toUpperCase() + user.slice(1) + "!";
+    computerScore++;
+    console.log("You lose!")
   }
+
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+playGame();
+playGame();
+playGame();
+playGame();
+playGame();
 
-console.log(playRound(humanSelection, computerSelection))
+console.log("You got " + humanScore + " and the computer got " + computerScore + "!")
