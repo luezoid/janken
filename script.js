@@ -10,4 +10,11 @@ function getComputerChoice() {
   }
 }
 
+function getHumanChoice() {
+  let humanChoice = prompt("Rock (Gu), Paper (Pa), or Scissors (Chi)?", "Rock")
+
+  return humanChoice;
+}
+
 console.log(getComputerChoice())
+console.log(getHumanChoice())
