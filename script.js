@@ -48,7 +48,6 @@ function getFinalResult(h, c) {
 }
 
 function playRound(humanChoice, computerChoice) {
-  let winner = getWinner(humanChoice, computerChoice);
 
   if (humanChoice === computerChoice) {
     showResult(`Draw! You both picked ${getFullName(humanChoice)}! No points! Current Score: ${humanScore}-${computerScore}`)
