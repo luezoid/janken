@@ -5,6 +5,8 @@ const ROCK_BTN = document.querySelector("#rock")
 const PAPER_BTN = document.querySelector("#paper")
 const SCISSORS_BTN = document.querySelector("#scissors")
 
+const RESULTS_DIV = document.querySelector(".results")
+
 function getComputerChoice() {
   let randDec = Math.random();
   
@@ -27,6 +29,12 @@ function getFullName(input) {
   } else {
     console.log("Invalid input. Something's gone wrong here!")
   }
+}
+
+function showResult(str) {
+  const result = document.createElement("p");
+  result.textContent = str;
+  document.RESULTS_DIV.appendChild(result)
 }
 
 function playRound(humanChoice, computerChoice) {
