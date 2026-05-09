@@ -60,7 +60,7 @@ function playRound(humanChoice, computerChoice) {
     showResult(`Computer wins one point! ${getFullName(computerChoice)} beats ${getFullName(humanChoice)}! Current Score: ${humanScore}-${computerScore}`)
   }
 
-  if (humanScore == 5 || computerScore == 5) {
+  if (humanScore === 5 || computerScore === 5) {
     ROCK_BTN.disabled = true;
     PAPER_BTN.disabled = true;
     SCISSORS_BTN.disabled = true;
