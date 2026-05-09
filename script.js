@@ -7,6 +7,8 @@ const SCISSORS_BTN = document.querySelector("#scissors")
 
 const RESULTS_DIV = document.querySelector(".results")
 
+const outcome = { r: "p", p: "r", s: "p"} 
+
 function getComputerChoice() {
   let selections = ["r", "p", "s"]
   let i = Math.floor(Math.random() * selections.length);
@@ -45,10 +47,11 @@ function getFinalResult(h, c) {
   }
 }
 
-function getWinner(choiceOne, choiceTwo) {
-  if (choiceOne === choiceTwo) {
+
+function getWinner(humanChoice, computerChoice) {
+  if (humanChoice === computerChoice) {
     return 0;
-  } else if ((choiceOne === "r" && choiceTwo === "s") || (choiceOne === "p" && choiceTwo === "r") || (choiceOne === "s" && choiceTwo === "p")) {
+  } else if (outcome[`${humanChoice}`] === computerChoice) {
     return 1;
   } else {
     return 2;
