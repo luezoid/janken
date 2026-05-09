@@ -29,7 +29,7 @@ function showResult(str) {
   RESULTS_DIV.appendChild(result)
 }
 
-function isPlural(score) {
+function getPlurality(score) {
   if (score === 1) {
     return `${score} point`;
   } else {
@@ -39,9 +39,9 @@ function isPlural(score) {
 
 function getFinalResult(h, c) {
   if ((h > c)) {
-    return `You got ${isPlural(h)} and Gon Freecss got ${isPlural(c)}. You've won the game!`;
+    return `You got ${getPlurality(h)} and Gon Freecss got ${getPlurality(c)}. You've won the game!`;
   } else {
-    return `You got ${isPlural(h)} and Gon Freecss got ${isPlural(c)}. You've lost the game!`
+    return `You got ${getPlurality(h)} and Gon Freecss got ${getPlurality(c)}. You've lost the game!`
   }
 }
 
