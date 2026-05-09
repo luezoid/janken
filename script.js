@@ -42,6 +42,18 @@ function playRound(humanChoice, computerChoice) {
   }
 }
 
+ROCK_BTN.addEventListener("click", function() {
+  playRound("r", getComputerChoice())
+})
+
+PAPER_BTN.addEventListener("click", function() {
+  playRound("p", getComputerChoice())
+})
+
+SCISSORS_BTN.addEventListener("click", function() {
+  playRound("s", getComputerChoice())
+})
+
 function playGame() {
   const humanSelection = getHumanChoice();
 
