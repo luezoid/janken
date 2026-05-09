@@ -1,6 +1,5 @@
 let humanScore = 0;
 let computerScore = 0;
-let roundNumber = 0;
 
 const ROCK_BTN = document.querySelector("#rock")
 const PAPER_BTN = document.querySelector("#paper")
@@ -51,25 +50,21 @@ function playRound(humanChoice, computerChoice) {
   }
 }
 
-ROCK_BTN.addEventListener("click", function() {
-  playRound("r", getComputerChoice())
-  round++;
-})
-
-PAPER_BTN.addEventListener("click", function() {
-  playRound("p", getComputerChoice())
-  round++;
-})
-
-SCISSORS_BTN.addEventListener("click", function() {
-  playRound("s", getComputerChoice())
-  round++;
-})
-
 function playGame() {
-  const humanSelection = getHumanChoice();
 
-  const roundResult = playRound(humanSelection, computerSelection);
+  let roundResult;
+
+  ROCK_BTN.addEventListener("click", function() {
+    roundResult = playRound("r", getComputerChoice())
+  })
+
+  PAPER_BTN.addEventListener("click", function() {
+    roundResult = playRound("p", getComputerChoice())
+  })
+
+  SCISSORS_BTN.addEventListener("click", function() {
+    roundResult = playRound("s", getComputerChoice())
+  })
 
   if (roundResult === "h") {
     humanScore++;
@@ -77,6 +72,8 @@ function playGame() {
     computerScore++;
   }
 }
+
+playGame();
 
 function getWinner(h, c) {
   if ((h > c) && (h !== 1) && (c !== 1)) {
