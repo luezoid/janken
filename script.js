@@ -18,9 +18,7 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-  ROCK_BTN.addEventListener("click", () => {
-    return "r";
-  });
+
 
   PAPER_BTN.addEventListener("click", () => {
     return "p";
@@ -43,8 +41,9 @@ function getFullName(input) {
   }
 }
 
-function playRound(humanChoice, computerChoice) {
 
+
+function playRound(humanChoice, computerChoice) {
   if ((humanChoice === "r" && computerChoice === "r") || (humanChoice === "p" && computerChoice === "p") || (humanChoice === "s" && computerChoice === "s")) {
     console.log(`Draw! You both picked ${getFullName(humanChoice)}! No points!`)
     return "d"
@@ -56,6 +55,8 @@ function playRound(humanChoice, computerChoice) {
     return "c"
   }
 }
+
+ROCK_BTN.addEventListener("click", playRound(removeEventListener, getComputerChoice()));
 
 function playGame() {
   const humanSelection = getHumanChoice();
