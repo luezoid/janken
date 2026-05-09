@@ -49,30 +49,17 @@ function playRound(humanChoice, computerChoice) {
   }
 }
 
-function playGame() {
+ROCK_BTN.addEventListener("click", function() {
+  roundResult = playRound("r", getComputerChoice())
+})
 
-  let roundResult;
+PAPER_BTN.addEventListener("click", function() {
+  roundResult = playRound("p", getComputerChoice())
+})
 
-  ROCK_BTN.addEventListener("click", function() {
-    roundResult = playRound("r", getComputerChoice())
-  })
-
-  PAPER_BTN.addEventListener("click", function() {
-    roundResult = playRound("p", getComputerChoice())
-  })
-
-  SCISSORS_BTN.addEventListener("click", function() {
-    roundResult = playRound("s", getComputerChoice())
-  })
-
-  if (roundResult === "h") {
-    humanScore++;
-  } else if (roundResult === "c") {
-    computerScore++;
-  }
-}
-
-playGame();
+SCISSORS_BTN.addEventListener("click", function() {
+  roundResult = playRound("s", getComputerChoice())
+})
 
 function getWinner(h, c) {
   if ((h > c) && (h !== 1) && (c !== 1)) {
