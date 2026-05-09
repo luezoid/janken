@@ -81,13 +81,13 @@ function playRound(humanChoice, computerChoice) {
 }
 
 ROCK_BTN.addEventListener("click", function() {
-  roundResult = playRound("r", getComputerChoice())
+  playRound("r", getComputerChoice())
 })
 
 PAPER_BTN.addEventListener("click", function() {
-  roundResult = playRound("p", getComputerChoice())
+  playRound("p", getComputerChoice())
 })
 
 SCISSORS_BTN.addEventListener("click", function() {
-  roundResult = playRound("s", getComputerChoice())
+  playRound("s", getComputerChoice())
 })
