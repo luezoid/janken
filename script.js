@@ -1,8 +1,6 @@
 let humanScore = 0;
 let computerScore = 0;
 
-const SELECTIONS = document.querySelectorAll(".selections")
-
 const ROCK_BTN = document.querySelector("#rock")
 const PAPER_BTN = document.querySelector("#paper")
 const SCISSORS_BTN = document.querySelector("#scissors")
@@ -67,6 +65,10 @@ function playRound(humanChoice, computerChoice) {
   }
 
   if (humanScore == 5 || computerScore == 5) {
+    ROCK_BTN.disabled = true;
+    PAPER_BTN.disabled = true;
+    SCISSORS_BTN.disabled = true;
+
     const finalResult = getWinner(humanScore, computerScore)
     showResult(finalResult);
   }
@@ -83,7 +85,3 @@ PAPER_BTN.addEventListener("click", function() {
 SCISSORS_BTN.addEventListener("click", function() {
   roundResult = playRound("s", getComputerChoice())
 })
-
-
-
-console.log(getWinner(humanScore, computerScore))
