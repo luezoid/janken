@@ -1,9 +1,7 @@
 let humanScore = 0;
 let computerScore = 0;
 
-const ROCK_BTN = document.querySelector("#rock")
-const PAPER_BTN = document.querySelector("#paper")
-const SCISSORS_BTN = document.querySelector("#scissors")
+const selections = document.querySelectorAll(".selections")
 
 function getComputerChoice() {
   let randDec = Math.random();
@@ -15,18 +13,6 @@ function getComputerChoice() {
   } else {
     return "s"
   }
-}
-
-function getHumanChoice() {
-
-
-  PAPER_BTN.addEventListener("click", () => {
-    return "p";
-  });
-
-  SCISSORS_BTN.addEventListener("click", () => {
-    return "s";
-  });
 }
 
 function getFullName(input) {
@@ -41,8 +27,6 @@ function getFullName(input) {
   }
 }
 
-
-
 function playRound(humanChoice, computerChoice) {
   if ((humanChoice === "r" && computerChoice === "r") || (humanChoice === "p" && computerChoice === "p") || (humanChoice === "s" && computerChoice === "s")) {
     console.log(`Draw! You both picked ${getFullName(humanChoice)}! No points!`)
@@ -56,11 +40,9 @@ function playRound(humanChoice, computerChoice) {
   }
 }
 
-ROCK_BTN.addEventListener("click", playRound(removeEventListener, getComputerChoice()));
-
 function playGame() {
   const humanSelection = getHumanChoice();
-  const computerSelection = getComputerChoice();
+
   const roundResult = playRound(humanSelection, computerSelection);
 
   if (roundResult === "h") {
