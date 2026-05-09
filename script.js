@@ -1,5 +1,6 @@
 let humanScore = 0;
 let computerScore = 0;
+let roundNumber = 0;
 
 const ROCK_BTN = document.querySelector("#rock")
 const PAPER_BTN = document.querySelector("#paper")
@@ -34,7 +35,7 @@ function getFullName(input) {
 function showResult(str) {
   const result = document.createElement("p");
   result.textContent = str;
-  document.RESULTS_DIV.appendChild(result)
+  RESULTS_DIV.appendChild(result)
 }
 
 function playRound(humanChoice, computerChoice) {
@@ -52,14 +53,17 @@ function playRound(humanChoice, computerChoice) {
 
 ROCK_BTN.addEventListener("click", function() {
   playRound("r", getComputerChoice())
+  round++;
 })
 
 PAPER_BTN.addEventListener("click", function() {
   playRound("p", getComputerChoice())
+  round++;
 })
 
 SCISSORS_BTN.addEventListener("click", function() {
   playRound("s", getComputerChoice())
+  round++;
 })
 
 function playGame() {
