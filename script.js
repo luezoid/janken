@@ -52,7 +52,7 @@ function playRound(humanChoice, computerChoice) {
 
   if (humanChoice === computerChoice) {
     showResult(`Draw! You both picked ${getFullName(humanChoice)}! No points! Current Score: ${humanScore}-${computerScore}`)
-  } else if (outcome[`${humanChoice}`] === computerChoice) {
+  } else if (outcome[humanChoice] === computerChoice) {
     humanScore++;
     showResult(`You win one point! ${getFullName(humanChoice)} beats ${getFullName(computerChoice)}! Current Score: ${humanScore}-${computerScore}`)
   } else {
