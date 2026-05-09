@@ -46,10 +46,6 @@ function getWinner(h, c) {
     return `You got ${h} points and Gon Freecss got ${c} points. You've lost the game!`
   } else if ((c > h) && (h !== 1) && (c == 1)) {
     return `You got ${h} point and Gon Freecss got ${c} points. You've lost the game!`
-  } else if ((h == c) && h !== 1) {
-    return `You both got ${h} points! Draw!`
-  } else if ((h == c) && h == 1) {
-    return `You both got ${h} point! Draw!`
   }
 }
 
