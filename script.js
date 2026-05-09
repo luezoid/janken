@@ -8,15 +8,9 @@ const SCISSORS_BTN = document.querySelector("#scissors")
 const RESULTS_DIV = document.querySelector(".results")
 
 function getComputerChoice() {
-  let randDec = Math.random();
-  
-  if (randDec >= (1 / 3) && randDec < (2 / 3)) {
-    return "r"
-  } else if (randDec < (1 / 3)) {
-    return "p"
-  } else {
-    return "s"
-  }
+  let selections = ["r", "p", "s"]
+  let i = Math.floor(Math.random() * selections.length);
+  return selections[i];
 }
 
 function getFullName(input) {
