@@ -7,7 +7,7 @@ const SCISSORS_BTN = document.querySelector("#scissors")
 
 const RESULTS_DIV = document.querySelector(".results")
 
-const outcome = { r: "p", p: "r", s: "p"} 
+const outcome = { r: "s", p: "r", s: "p"} 
 
 function getComputerChoice() {
   let selections = ["r", "p", "s"]
