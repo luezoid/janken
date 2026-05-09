@@ -47,9 +47,9 @@ function isPlural(score) {
 
 function getWinner(h, c) {
   if ((h > c)) {
-    return `You got ${isPlural(h)} points and Gon Freecss got ${isPlural(c)} points. You've won the game!`;
+    return `You got ${isPlural(h)} and Gon Freecss got ${isPlural(c)}. You've won the game!`;
   } else {
-    return `You got ${isPlural(h)} points and Gon Freecss got ${isPlural(c)} points. You've lost the game!`
+    return `You got ${isPlural(h)} and Gon Freecss got ${isPlural(c)}. You've lost the game!`
   }
 }
 
