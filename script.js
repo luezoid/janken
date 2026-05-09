@@ -1,7 +1,9 @@
 let humanScore = 0;
 let computerScore = 0;
 
-const selections = document.querySelectorAll(".selections")
+const ROCK_BTN = document.querySelector("#rock")
+const PAPER_BTN = document.querySelector("#paper")
+const SCISSORS_BTN = document.querySelector("#scissors")
 
 function getComputerChoice() {
   let randDec = Math.random();
