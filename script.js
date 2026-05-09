@@ -39,7 +39,7 @@ function isPlural(score) {
   }
 }
 
-function getWinner(h, c) {
+function getFinalResult(h, c) {
   if ((h > c)) {
     return `You got ${isPlural(h)} and Gon Freecss got ${isPlural(c)}. You've won the game!`;
   } else {
@@ -63,7 +63,7 @@ function playRound(humanChoice, computerChoice) {
     PAPER_BTN.disabled = true;
     SCISSORS_BTN.disabled = true;
 
-    const finalResult = getWinner(humanScore, computerScore)
+    const finalResult = getFinalResult(humanScore, computerScore)
     showResult(finalResult);
   }
 }
