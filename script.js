@@ -37,6 +37,14 @@ function showResult(str) {
   RESULTS_DIV.appendChild(result)
 }
 
+function isPlural(score) {
+  if (score === 1) {
+    return `${score} point`;
+  } else {
+    return `${score} points`;
+  }
+}
+
 function getWinner(h, c) {
   if ((h > c) && (h !== 1) && (c !== 1)) {
     return `You got ${h} points and Gon Freecss got ${c} points. You've won the game!`;
