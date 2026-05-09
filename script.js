@@ -1,6 +1,10 @@
 let humanScore = 0;
 let computerScore = 0;
 
+const ROCK_BTN = document.querySelector("#rock")
+const PAPER_BTN = document.querySelector("#paper")
+const SCISSORS_BTN = document.querySelector("#scissors")
+
 function getComputerChoice() {
   let randDec = Math.random();
   
@@ -14,17 +18,17 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-  let text = prompt("You are fighting Gon Freecss. What's your move? Rock (Gu), Paper (Pa), or Scissors (Chi)?", "Rock")
-
-  if ((text.toLowerCase() === "rock") || (text.toLowerCase() === "gu") || (text.toLowerCase() === "r") || (text.toLowerCase() === "g")) {
+  ROCK_BTN.addEventListener("click", () => {
     return "r";
-  } else if ((text.toLowerCase() === "paper") || (text.toLowerCase() === "pa") || (text.toLowerCase() === "p")) {
+  });
+
+  PAPER_BTN.addEventListener("click", () => {
     return "p";
-  } else if ((text.toLowerCase() === "scissors") || (text.toLowerCase() === "chi") || (text.toLowerCase() === "s") || (text.toLowerCase() === "c")) {
+  });
+
+  SCISSORS_BTN.addEventListener("click", () => {
     return "s";
-  } else {
-    return "Invalid input. Something's gone wrong here!"
-  }
+  });
 }
 
 function getFullName(input) {
