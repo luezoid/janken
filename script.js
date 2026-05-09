@@ -14,9 +14,9 @@ function getComputerChoice() {
 }
 
 function getFullName(input) {
-  if (input == "r") {
+  if (input === "r") {
     return "Rock (Gu)";
-  } else if (input == "p") {
+  } else if (input === "p") {
     return "Paper (Pa)";
   } else {
     return "Scissors (Chi)";
