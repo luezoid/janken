@@ -65,11 +65,6 @@ function playGame() {
   }
 }
 
-for (let i = 1; i <= 5; i++) {
-  playGame();
-}
-
-
 function getWinner(h, c) {
   if ((h > c) && (h !== 1) && (c !== 1)) {
     return `You got ${h} points and Gon Freecss got ${c} points. You've won the game!`;
