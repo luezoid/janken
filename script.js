@@ -43,21 +43,21 @@ function getFullName(input) {
   }
 }
 
+function playRound(humanChoice, computerChoice) {
+
+  if ((humanChoice === "r" && computerChoice === "r") || (humanChoice === "p" && computerChoice === "p") || (humanChoice === "s" && computerChoice === "s")) {
+    console.log(`Draw! You both picked ${getFullName(humanChoice)}! No points!`)
+    return "d"
+  } else if ((humanChoice === "r" && computerChoice === "s") || (humanChoice === "p" && computerChoice === "r") || (humanChoice === "s" && computerChoice === "p")) {
+    console.log(`You win one point! ${getFullName(humanChoice)} beats ${getFullName(computerChoice)}!`)
+    return "h"
+  } else {
+    console.log(`Computer wins one point! ${getFullName(computerChoice)} beats ${getFullName(humanChoice)}!`)
+    return "c"
+  }
+}
+
 function playGame() {
-    function playRound(humanChoice, computerChoice) {
-
-      if ((humanChoice === "r" && computerChoice === "r") || (humanChoice === "p" && computerChoice === "p") || (humanChoice === "s" && computerChoice === "s")) {
-        console.log(`Draw! You both picked ${getFullName(humanChoice)}! No points!`)
-        return "d"
-      } else if ((humanChoice === "r" && computerChoice === "s") || (humanChoice === "p" && computerChoice === "r") || (humanChoice === "s" && computerChoice === "p")) {
-        console.log(`You win one point! ${getFullName(humanChoice)} beats ${getFullName(computerChoice)}!`)
-        return "h"
-      } else {
-        console.log(`Computer wins one point! ${getFullName(computerChoice)} beats ${getFullName(humanChoice)}!`)
-        return "c"
-      }
-    }
-
   const humanSelection = getHumanChoice();
   const computerSelection = getComputerChoice();
   const roundResult = playRound(humanSelection, computerSelection);
