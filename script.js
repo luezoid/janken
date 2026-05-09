@@ -47,23 +47,12 @@ function getFinalResult(h, c) {
   }
 }
 
-
-function getWinner(humanChoice, computerChoice) {
-  if (humanChoice === computerChoice) {
-    return 0;
-  } else if (outcome[`${humanChoice}`] === computerChoice) {
-    return 1;
-  } else {
-    return 2;
-  }
-}
-
 function playRound(humanChoice, computerChoice) {
   let winner = getWinner(humanChoice, computerChoice);
 
-  if (winner === 0) {
+  if (humanChoice === computerChoice) {
     showResult(`Draw! You both picked ${getFullName(humanChoice)}! No points! Current Score: ${humanScore}-${computerScore}`)
-  } else if (winner === 1) {
+  } else if (outcome[`${humanChoice}`] === computerChoice) {
     humanScore++;
     showResult(`You win one point! ${getFullName(humanChoice)} beats ${getFullName(computerChoice)}! Current Score: ${humanScore}-${computerScore}`)
   } else {
