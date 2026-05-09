@@ -1,6 +1,8 @@
 let humanScore = 0;
 let computerScore = 0;
 
+const SELECTIONS = document.querySelectorAll(".selections")
+
 const ROCK_BTN = document.querySelector("#rock")
 const PAPER_BTN = document.querySelector("#paper")
 const SCISSORS_BTN = document.querySelector("#scissors")
@@ -37,30 +39,6 @@ function showResult(str) {
   RESULTS_DIV.appendChild(result)
 }
 
-function playRound(humanChoice, computerChoice) {
-  if ((humanChoice === "r" && computerChoice === "r") || (humanChoice === "p" && computerChoice === "p") || (humanChoice === "s" && computerChoice === "s")) {
-    showResult(`Draw! You both picked ${getFullName(humanChoice)}! No points! Current Score: ${humanScore}-${computerScore}`)
-  } else if ((humanChoice === "r" && computerChoice === "s") || (humanChoice === "p" && computerChoice === "r") || (humanChoice === "s" && computerChoice === "p")) {
-    humanScore++;
-    showResult(`You win one point! ${getFullName(humanChoice)} beats ${getFullName(computerChoice)}! Current Score: ${humanScore}-${computerScore}`)
-  } else {
-    computerScore++;
-    showResult(`Computer wins one point! ${getFullName(computerChoice)} beats ${getFullName(humanChoice)}! Current Score: ${humanScore}-${computerScore}`)
-  }
-}
-
-ROCK_BTN.addEventListener("click", function() {
-  roundResult = playRound("r", getComputerChoice())
-})
-
-PAPER_BTN.addEventListener("click", function() {
-  roundResult = playRound("p", getComputerChoice())
-})
-
-SCISSORS_BTN.addEventListener("click", function() {
-  roundResult = playRound("s", getComputerChoice())
-})
-
 function getWinner(h, c) {
   if ((h > c) && (h !== 1) && (c !== 1)) {
     return `You got ${h} points and Gon Freecss got ${c} points. You've won the game!`;
@@ -76,5 +54,36 @@ function getWinner(h, c) {
     return `You both got ${h} point! Draw!`
   }
 }
+
+function playRound(humanChoice, computerChoice) {
+  if ((humanChoice === "r" && computerChoice === "r") || (humanChoice === "p" && computerChoice === "p") || (humanChoice === "s" && computerChoice === "s")) {
+    showResult(`Draw! You both picked ${getFullName(humanChoice)}! No points! Current Score: ${humanScore}-${computerScore}`)
+  } else if ((humanChoice === "r" && computerChoice === "s") || (humanChoice === "p" && computerChoice === "r") || (humanChoice === "s" && computerChoice === "p")) {
+    humanScore++;
+    showResult(`You win one point! ${getFullName(humanChoice)} beats ${getFullName(computerChoice)}! Current Score: ${humanScore}-${computerScore}`)
+  } else {
+    computerScore++;
+    showResult(`Computer wins one point! ${getFullName(computerChoice)} beats ${getFullName(humanChoice)}! Current Score: ${humanScore}-${computerScore}`)
+  }
+
+  if (humanScore == 5 || computerScore == 5) {
+    const finalResult = getWinner(humanScore, computerScore)
+    showResult(finalResult);
+  }
+}
+
+ROCK_BTN.addEventListener("click", function() {
+  roundResult = playRound("r", getComputerChoice())
+})
+
+PAPER_BTN.addEventListener("click", function() {
+  roundResult = playRound("p", getComputerChoice())
+})
+
+SCISSORS_BTN.addEventListener("click", function() {
+  roundResult = playRound("s", getComputerChoice())
+})
+
+
 
 console.log(getWinner(humanScore, computerScore))
