@@ -46,14 +46,10 @@ function isPlural(score) {
 }
 
 function getWinner(h, c) {
-  if ((h > c) && (h !== 1) && (c !== 1)) {
-    return `You got ${h} points and Gon Freecss got ${c} points. You've won the game!`;
-  } else if ((h > c) && (h == 1) && (c !== 1)) {
-    return `You got ${h} point and Gon Freecss got ${c} points. You've won the game!`
-  } else if ((c > h) && (h !== 1) && (c !== 1)) {
-    return `You got ${h} points and Gon Freecss got ${c} points. You've lost the game!`
-  } else if ((c > h) && (h !== 1) && (c == 1)) {
-    return `You got ${h} point and Gon Freecss got ${c} points. You've lost the game!`
+  if ((h > c)) {
+    return `You got ${isPlural(h)} points and Gon Freecss got ${isPlural(c)} points. You've won the game!`;
+  } else {
+    return `You got ${isPlural(h)} points and Gon Freecss got ${isPlural(c)} points. You've lost the game!`
   }
 }
 
