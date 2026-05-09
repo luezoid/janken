@@ -47,10 +47,22 @@ function getFinalResult(h, c) {
   }
 }
 
+function getWinner(choiceOne, choiceTwo) {
+  if (choiceOne === choiceTwo) {
+    return 0;
+  } else if ((choiceOne === "r" && choiceTwo === "s") || (choiceOne === "p" && choiceTwo === "r") || (choiceOne === "s" && choiceTwo === "p")) {
+    return 1;
+  } else {
+    return 2;
+  }
+}
+
 function playRound(humanChoice, computerChoice) {
-  if ((humanChoice === "r" && computerChoice === "r") || (humanChoice === "p" && computerChoice === "p") || (humanChoice === "s" && computerChoice === "s")) {
+  let winner = getWinner(humanChoice, computerChoice);
+
+  if (winner === 0) {
     showResult(`Draw! You both picked ${getFullName(humanChoice)}! No points! Current Score: ${humanScore}-${computerScore}`)
-  } else if ((humanChoice === "r" && computerChoice === "s") || (humanChoice === "p" && computerChoice === "r") || (humanChoice === "s" && computerChoice === "p")) {
+  } else if (winner === 1) {
     humanScore++;
     showResult(`You win one point! ${getFullName(humanChoice)} beats ${getFullName(computerChoice)}! Current Score: ${humanScore}-${computerScore}`)
   } else {
