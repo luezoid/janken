@@ -1,6 +1,8 @@
 let humanScore = 0;
 let computerScore = 0;
 
+const SELECTIONS = document.querySelector(".selections")
+
 const ROCK_BTN = document.querySelector("#rock")
 const PAPER_BTN = document.querySelector("#paper")
 const SCISSORS_BTN = document.querySelector("#scissors")
@@ -8,6 +10,16 @@ const SCISSORS_BTN = document.querySelector("#scissors")
 const RESULTS_DIV = document.querySelector(".results")
 
 const outcome = { r: "s", p: "r", s: "p"} 
+
+function getHumanChoice() {
+  if (event.target.id === "rock") {
+    return "r";
+  } else if (event.target.id === "paper") {
+    return "p";
+  } else {
+    return "s";
+  }
+}
 
 function getComputerChoice() {
   let selections = ["r", "p", "s"]
@@ -69,14 +81,6 @@ function playRound(humanChoice, computerChoice) {
   }
 }
 
-ROCK_BTN.addEventListener("click", function() {
-  playRound("r", getComputerChoice())
-})
-
-PAPER_BTN.addEventListener("click", function() {
-  playRound("p", getComputerChoice())
-})
-
-SCISSORS_BTN.addEventListener("click", function() {
-  playRound("s", getComputerChoice())
+SELECTIONS.addEventListener("click", () => {
+  playRound(getHumanChoice(), getComputerChoice())
 })
