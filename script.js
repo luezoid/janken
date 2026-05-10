@@ -3,9 +3,7 @@ let computerScore = 0;
 
 const SELECTIONS = document.querySelector(".selections")
 
-const ROCK_BTN = document.querySelector("#rock")
-const PAPER_BTN = document.querySelector("#paper")
-const SCISSORS_BTN = document.querySelector("#scissors")
+const BUTTONS = document.querySelectorAll("button")
 
 const RESULTS_DIV = document.querySelector(".results")
 
@@ -72,9 +70,9 @@ function playRound(humanChoice, computerChoice) {
   }
 
   if (humanScore === 5 || computerScore === 5) {
-    ROCK_BTN.disabled = true;
-    PAPER_BTN.disabled = true;
-    SCISSORS_BTN.disabled = true;
+    BUTTONS.forEach(button => {
+      button.disabled = true;
+    });
 
     const finalResult = getFinalResult(humanScore, computerScore)
     showResult(finalResult);
