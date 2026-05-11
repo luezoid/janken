@@ -9,7 +9,7 @@ const RESULTS_DIV = document.querySelector(".results")
 
 const outcome = { r: "s", p: "r", s: "p"} 
 
-function getHumanChoice() {
+function getHumanChoice(event) {
   if (event.target.id === "rock") {
     return "r";
   } else if (event.target.id === "paper") {
@@ -79,6 +79,7 @@ function playRound(humanChoice, computerChoice) {
   }
 }
 
-SELECTIONS.addEventListener("click", () => {
-  playRound(getHumanChoice(), getComputerChoice())
+SELECTIONS.addEventListener("click", (event) => {
+  if (event.target.closest("button") === null) return;
+  playRound(getHumanChoice(event), getComputerChoice())
 })
